@@ -9,8 +9,8 @@ int main() {
 	ReadFile(fin1, data);
 	ReadFile(fin2, data);
 	ofstream fout("result.csv");
-	vector<pair<string, int>> rating (data.size());
-	//CalculateWinners(data, rating);
+	vector<pair<string, int>> rating;
+	GetWinners(data, rating);
 	//OutWinners(data);
 	//короче позже там допишу вывод, я спать хочу
 	return 0;
