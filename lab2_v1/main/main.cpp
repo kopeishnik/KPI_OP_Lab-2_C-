@@ -11,7 +11,7 @@ int main() {
 	ofstream fout("result.csv");
 	vector<pair<string, int>> rating;
 	GetWinners(data, rating);
-	//OutWinners(data);
+	//OutWinners(rating);
 	//короче позже там допишу вывод, я спать хочу
 	return 0;
 }
