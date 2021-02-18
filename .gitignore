@@ -1,0 +1,16 @@
+
+*.db
+
+*.db-shm
+
+lab2_v1/main/main.vcxproj.filters
+
+lab2_v1/main/main.vcxproj.user
+
+lab2_v1/main/main.vcxproj
+
+lab2_v1/lab2_v1.sln
+
+*.db-wal
+
+lab2_v1/.vs/lab2_v1/v16/
