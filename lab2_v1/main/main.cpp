@@ -5,14 +5,13 @@ using namespace std;
 int main() {
 	vector<pair<string, vector<int>>> data;
 	int x = 1;
-	ifstream fin("eurovision1.csv");
-	while (fin.is_open()) {
-		ReadFile(fin, data);
-		x++;
-		string filename = "eurovision" + to_string(x) + ".csv";
-		cout << filename << endl;
-		fin.open(filename);
-	}
-	//условно еще какие-то функции там, вывод какой-то
+	ifstream fin1("eurovision" + to_string(x) + ".csv"), fin2("eurovision" + to_string(x+1) + ".csv");
+	ReadFile(fin1, data);
+	ReadFile(fin2, data);
+	ofstream fout("result.csv");
+	vector<pair<string, int>> rating (data.size());
+	//CalculateWinners(data, rating);
+	//OutWinners(data);
+	//короче позже там допишу вывод, я спать хочу
 	return 0;
 }
