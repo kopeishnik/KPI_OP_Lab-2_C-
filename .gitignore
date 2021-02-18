@@ -14,3 +14,7 @@ lab2_v1/lab2_v1.sln
 *.db-wal
 
 lab2_v1/.vs/lab2_v1/v16/
+
+lab2_v1/Debug/
+
+lab2_v1/main/Debug/
