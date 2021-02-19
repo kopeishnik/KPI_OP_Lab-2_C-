@@ -8,7 +8,7 @@ void ReadWhile(int x, vector<pair<string, vector<int>>>& data) {
 	ifstream fin(filename.c_str());
 	ReadFile(fin, data);
 	x++;
-	string filename = "eurovision" + to_string(x) + ".csv";
+	filename = "eurovision" + to_string(x) + ".csv";
 	ifstream fin1(filename.c_str());
 	if (fin1.is_open()) {
 		ReadWhile(x, data);
