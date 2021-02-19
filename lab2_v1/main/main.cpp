@@ -11,7 +11,14 @@ int main() {
 	vector<pair<string, int>> rating;
 	for (const auto& r : data) rating.push_back({ r.first, 0 });
 	ofstream fout("result.csv");
+<<<<<<< HEAD
 	//CalculateWinners(data, rating);
 	//OutWinners(data);
+=======
+	vector<pair<string, int>> rating;
+	GetWinners(data, rating);
+	//OutWinners(rating);
+	//короче позже там допишу вывод, я спать хочу
+>>>>>>> main
 	return 0;
 }

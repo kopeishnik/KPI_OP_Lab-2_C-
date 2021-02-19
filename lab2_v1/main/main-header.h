@@ -5,8 +5,10 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
 
 void ReadWhile(int, std::vector<std::pair<std::string, std::vector<int>>>&);
 void ReadFile(std::ifstream&, std::vector<std::pair<std::string, std::vector<int>>>&);
-// обработка
-// ыыыыы вывод
+void GetWinners(std::vector<std::pair<std::string, std::vector<int>>>, std::vector<std::pair<std::string, int>>&);
+// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
