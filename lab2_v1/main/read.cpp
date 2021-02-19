@@ -13,15 +13,15 @@ void ReadFile(ifstream& fin, vector<pair<string, vector<int>>>& data) {
 		string name;
 		vector<int> votes;
 		getline(stream, name, ','); 
-		cout << name << ' ';
-		while (stream) {
+		int a;
+		fin >> a;
+		/*while (stream) {
 			int x;
 			fin >> x;
 			votes.push_back(x);
 			cout << x << ' ';
 			//if (stream) fin.ignore(1);
-		}
-		cout << endl;
+		}*/
 		data.push_back({ name, votes });
 	}
 }
