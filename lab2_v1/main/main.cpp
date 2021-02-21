@@ -1,7 +1,10 @@
 ﻿#include "main-header.h"
 
-using namespace std;
+#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
+#include <experimental/filesystem>
 namespace fs = std::experimental::filesystem;
+
+using namespace std;
 
 template <typename key, typename value> //вместо OutWinners
 ostream& operator<< (ostream& stream, vector<pair<key, value>> v) {
@@ -14,23 +17,14 @@ ostream& operator<< (ostream& stream, vector<pair<key, value>> v) {
 	return stream;
 }
 
-string GetDirectory(const string& request);
-
 int main() {
 	vector<pair<string, vector<int>>> data;
-	string p = GetDirectory("giv me path");
-	const fs::path path = p;
 	setlocale(LC_ALL, "russian");
-	//C:\\Материалы\\workspace\\contest-files
-	//C:\Материалы\workspace\KPI_OP_Lab-2_C++\lab2_v1\main
-	//C:\Материалы\workspace\contest-files
 	cout << "zis path: " << fs::current_path() << endl;
-	for (auto& entry : fs::directory_iterator(path)) {
-		cout << entry.path() << endl;
-		//ReadFile(entry.path().string(), data);
+	vector<string> files = GetFiles("giv me path"); //C:\papka\another\ в моем случае
+	for (const auto& file : files) {
+		ReadFile(file, data);
 	}
-	ReadFile("eurovision1.csv", data);
-	ReadFile("eurovision2.csv", data);
 	vector<pair<string, int>> rating;
 	cout << endl;
 	int it = 0;
@@ -48,11 +42,4 @@ int main() {
 	//OutWinners(fout, rating); //вместо него юзаю перегрузку оператора вывода
 	fout << rating;
 	return 0;
-}
-
-string GetDirectory(const string& request) {
-	string s;
-	cout << request << ": ";
-	cin >> s;
-	return s;
 }
