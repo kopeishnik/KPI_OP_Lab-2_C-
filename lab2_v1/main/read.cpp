@@ -35,7 +35,6 @@ void ReadFile(const string s, vector<pair<string, vector<int>>>& data) {
 		string str;
 		getline(fin, str);
 		stringstream stream(str);
-		cout << str << endl;
 		string name;
 		vector<int> votes;
 		getline(stream, name, ',');
