@@ -35,11 +35,13 @@ void ReadFile(const string s, vector<pair<string, vector<int>>>& data) {
 		string str;
 		getline(fin, str);
 		stringstream stream(str);
-		string name;
+		string name = ReadName(stream);
 		vector<int> votes;
-		getline(stream, name, ',');
 		while (stream) {
 			int x;
+			if (stream.peek() == '0') {
+				stream >> hex >> x;
+			}
 			stream >> x;
 			votes.push_back(x);
 			if (stream.peek() == ',') stream.ignore(1);
