@@ -22,3 +22,15 @@ void GetWinners(vector<pair<string, vector<int>>> data, vector<pair<string, int>
     sort(rating.begin(), rating.end(), isbigger_p);
     rating.erase(rating.begin()+10, rating.end());
 }           //тепер rating складається з 10 обернено сортованих пар
+
+string ReadName(istream& stream) {
+    string name;
+    char limiter = ',';
+    if (stream.peek() == '\"') {
+        limiter = '\"';
+        stream.ignore(1);
+    }
+    getline(stream, name, limiter);
+    if (limiter == '\"') stream.ignore(1);
+    return name;
+}
