@@ -42,7 +42,9 @@ void ReadFile(const string s, vector<pair<string, vector<int>>>& data) {
 			if (stream.peek() == '0') {
 				stream >> hex >> x;
 			}
-			stream >> x;
+			else {
+				stream >> x;
+			}
 			votes.push_back(x);
 			if (stream.peek() == ',') stream.ignore(1);
 		}
